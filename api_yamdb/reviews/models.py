@@ -131,7 +131,7 @@ class Title(models.Model):
         return self.name
 
 
-class Genre_Title(models.Model):
+class GenreTitle(models.Model):
     """Creation a title name for a genre's object.
     wich is an inner bonded object to Genre and Title instances!
     """
