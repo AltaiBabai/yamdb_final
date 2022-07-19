@@ -99,10 +99,12 @@ class CommentsViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         title_id = self.kwargs.get('title_id')
         review_id = self.kwargs.get('review_id')
-        new_queryset = Comment.objects.filter(
+        # new_queryset = Comment.objects.filter(
+        #   review__pk=review_id
+        # ).filter(review__title__pk=title_id).order_by('-id')
+        return Comment.objects.filter(
             review__pk=review_id
         ).filter(review__title__pk=title_id).order_by('-id')
-        return new_queryset
 
     def perform_create(self, serializer):
         title_id = self.kwargs.get('title_id')
