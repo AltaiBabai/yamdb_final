@@ -44,17 +44,16 @@ def create_user(request):
 
 @api_view(['POST'])
 def create_token(request):
-    if request.method == 'POST':
-        serializer = TokenSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = get_object_or_404(
-            User, username=request.data['username']
-        )
-        if str(user.code_approve) != request.data['confirmation_code']:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-        refresh = RefreshToken.for_user(user)
-        return Response(
-            {
-                'token': str(refresh.access_token),
-            }
-        )
+    serializer = TokenSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    user = get_object_or_404(
+        User, username=request.data['username']
+    )
+    if str(user.code_approve) != request.data['confirmation_code']:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+    refresh = RefreshToken.for_user(user)
+    return Response(
+        {
+            'token': str(refresh.access_token),
+        }
+    )
