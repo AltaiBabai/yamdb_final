@@ -1,6 +1,6 @@
 ![example workflow](https://github.com/AltaiBabai/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-# CI/CD проекта api_yamdb
+# CI/CD of project API YAMDB
 ## API project for leaving a review to any 
 ## entertainment content like movies, songs, books a.e
 
