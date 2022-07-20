@@ -6,7 +6,6 @@
 
 ## Links for test project
 
-#
 - http://158.160.2.146/api/v1/ 
 - http://158.160.2.146/admin
 - http://158.160.2.146/redoc
